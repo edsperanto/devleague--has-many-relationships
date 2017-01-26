@@ -15,3 +15,13 @@ CREATE TABLE "users" (
 	updated_at timestamp NOT NULL now()
 );
 
+DROP TABLE IF EXISTS "posts";
+CREATE TABLE "posts" (
+	id serial NOT NULL PRIMARY KEY,
+	title VARCHAR(180) NULL,
+	url VARCHAR(510) NULL,
+	content	text NULL,
+	created_at timestamp NOT NULL now(),
+	updated_at timestamp NOT NULL now()
+);
+
