@@ -25,3 +25,10 @@ CREATE TABLE "posts" (
 	updated_at timestamp NOT NULL now()
 );
 
+DROP TABLE IF EXISTS "comments";
+CREATE TABLE "comments" (
+	id serial NOT NULL PRIMARY KEY,
+	body VARCHAR(510) NULL,
+	created_at timestamp NOT NULL now(),
+	updated_at timestamp NOT NULL now()
+);
