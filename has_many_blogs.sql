@@ -22,7 +22,8 @@ CREATE TABLE "posts" (
 	url VARCHAR(510) NULL,
 	content	text NULL,
 	created_at timestamp NOT NULL now(),
-	updated_at timestamp NOT NULL now()
+	updated_at timestamp NOT NULL now(),
+	users_id integer REFERENCES users(id) NOT NULL
 );
 
 DROP TABLE IF EXISTS "comments";
@@ -30,5 +31,7 @@ CREATE TABLE "comments" (
 	id serial NOT NULL PRIMARY KEY,
 	body VARCHAR(510) NULL,
 	created_at timestamp NOT NULL now(),
-	updated_at timestamp NOT NULL now()
+	updated_at timestamp NOT NULL now(),
+	users_id integer REFERENCES users(id) NOT NULL,
+	posts_id integer REFERENCES posts(id) NOT NULL
 );
