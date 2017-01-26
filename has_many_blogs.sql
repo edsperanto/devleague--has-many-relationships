@@ -37,3 +37,6 @@ CREATE TABLE "comments" (
 	users_id integer REFERENCES users(id) NOT NULL,
 	posts_id integer REFERENCES posts(id) NOT NULL
 );
+
+\i scripts/blog_data.sql
+\i joins.sql
