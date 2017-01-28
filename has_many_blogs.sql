@@ -1,5 +1,6 @@
 -- has_many_blogs.sql
 
+\connect Edward
 DROP USER IF EXISTS "has_many_user";
 CREATE USER "has_many_user";
 DROP DATABASE IF EXISTS "has_many_blogs";
