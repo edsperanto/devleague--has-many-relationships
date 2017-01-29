@@ -11,9 +11,13 @@ ON users.id = posts.users_id
 WHERE users.first_name = 'Norene' 
 AND users.last_name = 'Schmitt';
 -- 5.Create a query to get usernames from the users table where the user has created a post after January 1, 2015
-
+SELECT username FROM "users"
+WHERE created_at > '2015-01-01 00:00:00-00';
 -- 6.Create a query to get the post title, post content, and user's username where the user who created the post joined before January 1, 2015
-
+SELECT posts.title, posts.content, users.username
+FROM "posts" INNER JOIN "users"
+ON posts.users_id = users.id
+WHERE users.created_at < '2015-01-01 00:00:00-00';
 -- 7.Create a query to get the all rows in the comments table, showing post title (aliased as 'Post Title'), and the all the comment's fields
 
 -- 8.Create a query to get the all rows in the comments table, showing post title (aliased as post_title), post url (ailased as post_url), and the comment body (aliased as comment_body) where the post was created before January 1, 2015
